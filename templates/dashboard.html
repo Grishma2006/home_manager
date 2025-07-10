@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Your Products</h2>
+
+    <form method="GET" action="{{ url_for('dashboard') }}">
+        <input type="text" name="search" placeholder="Search by product name" value="{{ search }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <a href="/add">➕ Add Product</a> | 
+    <a href="/logout">🚪 Logout</a>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Expiry Date</th>
+            <th>Days Remaining</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.type }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.expiry_date }}</td>
+            <td>{{ product.days_remaining }}</td>
+            <td>
+                <a href="/edit/{{ product.id }}">✏️ Edit</a> | 
+                <a href="/delete/{{ product.id }}" onclick="return confirm('Delete this product?')">❌ Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

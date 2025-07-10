@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Edit Product</h2>
+    <form method="POST">
+        <input type="text" name="name" value="{{ product.name }}" required><br>
+        <input type="text" name="type" value="{{ product.type }}" required><br>
+        <input type="number" name="price" step="0.01" value="{{ product.price }}" required><br>
+        <label>Expiry Date:</label>
+        <input type="date" name="expiry_date" value="{{ product.expiry_date }}" required><br>
+        <button type="submit">Update Product</button>
+    </form>
+    <p><a href="/dashboard">⬅ Back to Dashboard</a></p>
+</body>
+</html>
