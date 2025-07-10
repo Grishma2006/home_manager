@@ -2,3 +2,5 @@
 Flask
 gunicorn
 sqlalchemy
+flask_sqlalchemy
+
