@@ -1,98 +1,50 @@
-/* Reset default margins and paddings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
-/* Container for form and content */
 .container {
-  max-width: 400px;
-  margin: auto;
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: #222;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="date"] {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+input, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
-  padding: 12px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+    background-color: #2980b9;
 }
 
-p {
-  margin-top: 10px;
-  font-size: 0.95rem;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
+table, th, td {
+    border: 1px solid #ccc;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* List of items on dashboard */
-ul {
-  margin-top: 20px;
-  padding-left: 0;
-  list-style: none;
-  text-align: left;
-}
-
-li {
-  padding: 10px;
-  background-color: #e9ecef;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-li a {
-  font-size: 0.9rem;
-  color: #dc3545;
+th, td {
+    padding: 10px;
+    text-align: left;
 }

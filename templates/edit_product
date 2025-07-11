@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Product</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Edit Product</h2>
-    <form method="POST">
-        <input type="text" name="name" value="{{ product.name }}" required><br>
-        <input type="text" name="type" value="{{ product.type }}" required><br>
-        <input type="number" name="price" step="0.01" value="{{ product.price }}" required><br>
-        <label>Expiry Date:</label>
-        <input type="date" name="expiry_date" value="{{ product.expiry_date }}" required><br>
-        <button type="submit">Update Product</button>
-    </form>
-    <p><a href="/dashboard">⬅ Back to Dashboard</a></p>
+    <div class="container">
+        <h2>Edit Item</h2>
+        <form method="POST">
+            <input type="text" name="name" value="{{ item.name }}" required>
+            <input type="text" name="type" value="{{ item.type }}" required>
+            <input type="number" name="price" value="{{ item.price }}" required>
+            <input type="date" name="expiry_date" value="{{ item.expiry_date }}" required>
+            <button type="submit">Update</button>
+        </form>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
 </body>
 </html>

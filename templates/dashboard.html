@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
-    <h2>Your Products</h2>
-
-    <form method="GET" action="{{ url_for('dashboard') }}">
-        <input type="text" name="search" placeholder="Search by product name" value="{{ search }}">
-        <button type="submit">Search</button>
-    </form>
-
-    <a href="/add">➕ Add Product</a> | 
-    <a href="/logout">🚪 Logout</a>
-
-    <table border="1">
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Price</th>
-            <th>Expiry Date</th>
-            <th>Days Remaining</th>
-            <th>Actions</th>
-        </tr>
-        {% for product in products %}
-        <tr>
-            <td>{{ product.name }}</td>
-            <td>{{ product.type }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.expiry_date }}</td>
-            <td>{{ product.days_remaining }}</td>
-            <td>
-                <a href="/edit/{{ product.id }}">✏️ Edit</a> | 
-                <a href="/delete/{{ product.id }}" onclick="return confirm('Delete this product?')">❌ Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h2>Welcome, {{ current_user.username }}</h2>
+        <a href="/logout">Logout</a>
+        <h3>Add Item</h3>
+        <form method="POST" action="/add">
+            <input type="text" name="name" placeholder="Item Name" required>
+            <input type="text" name="type" placeholder="Type" required>
+            <input type="number" name="price" placeholder="Price" required>
+            <input type="date" name="expiry_date" placeholder="Expiry Date" required>
+            <button type="submit">Add Item</button>
+        </form>
+        <h3>Your Items</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Expiry Date</th>
+                <th>Days Left</th>
+                <th>Actions</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.expiry_date }}</td>
+                <td>{{ item.days_left }}</td>
+                <td>
+                    <a href="/edit/{{ item.id }}">Edit</a>
+                    <a href="/delete/{{ item.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>
