@@ -1,49 +1,98 @@
-/* static/style.css */
-
-body {
-  font-family: Arial, sans-serif;
+/* Reset default margins and paddings */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f0f4f8;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 500px;
-  margin: auto;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
   padding: 20px;
+}
+
+/* Container for form and content */
+.container {
+  max-width: 400px;
+  margin: auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #222;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
-input, button {
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
   padding: 12px;
-  font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
 button {
+  padding: 12px;
   background-color: #007bff;
-  color: white;
+  color: #fff;
+  font-size: 1rem;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
-/* Mobile styles */
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
+p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
 
-  input, button {
-    font-size: 18px;
-  }
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* List of items on dashboard */
+ul {
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+li {
+  padding: 10px;
+  background-color: #e9ecef;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+li a {
+  font-size: 0.9rem;
+  color: #dc3545;
 }
